@@ -11,50 +11,6 @@ Console.WriteLine("Zadaj svoje meno: ");
 string playerName = Console.ReadLine();
 Console.WriteLine("Ahoj " + playerName + ", prave si vstupil do arény plnej príšer!");  //meno
 
-Console.Write("***********************************");
-Console.WriteLine("*******************************");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 int hpP = HpPlayer();  // načita život hráča
 int HpPlayer()
 {
