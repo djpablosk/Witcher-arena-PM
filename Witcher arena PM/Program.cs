@@ -12,3 +12,46 @@ Console.WriteLine($""
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const int hpPlayer = 100;       // zivoty hraca
+const int hpMonster = 20;      // zivoty prisery
+
