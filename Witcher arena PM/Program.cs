@@ -31,3 +31,60 @@ int HpMonster()
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Console.WriteLine("Vyber si svoju postavu: ");                                              // výber postavy
+Console.WriteLine("1. Alex:");
+Console.WriteLine("2. Chomik:");
+string character = Console.ReadLine();
+switch (character)
+{
+    case "1":
+        Console.WriteLine("Vybral si si Alex.");
+        break;
+    case "2":
+        Console.WriteLine("Vybral si si Chomik.");
+        break;
+    default:
+        Console.WriteLine("Neplatná voľba, vyber si Alex alebo Chomik.");
+        break;
+}
+Console.WriteLine("Stlač ENTER pre pokračovanie...");                                       // enter na pokračovanie a zacanie hry
+Console.ReadLine();
+Console.Clear();
+
+Console.WriteLine("Toto je tvoja postava");                                                    // zobrazenie postavy
+if (character == "1")
+{
+    Console.WriteLine("  0   ");                                                                //Postava 1 (Alex)
+    Console.WriteLine(" /| ");
+    Console.WriteLine(" / \\ ");
+}
+else if (character == "2")                                                                      //Postava 2 (Chomik)
+{
+    Console.WriteLine("  0   ");
+    Console.WriteLine("  | ");
+    Console.WriteLine(" / / ");
+}
+
+Console.WriteLine("Pre nacitanie areny stlac ENTER...");                                            //nacitanie areny
+Console.ReadLine();
+Console.Clear();
+
+Console.WriteLine("Vytaj v arene!");                                           //vstup do areny
+
+
+
+
+
