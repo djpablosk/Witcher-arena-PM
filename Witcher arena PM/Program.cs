@@ -1,7 +1,8 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using System.Xml.Serialization;
 
-System.Version version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
-Console.BackgroundColor = ConsoleColor.DarkBlue;
+System.Version version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;   //zistenie verzie
+Console.BackgroundColor = ConsoleColor.DarkBlue;                                                //nastavenie farby pozadia
 Console.Clear();
 Console.WriteLine($"Witcher Arena PM - Version {version}");                                   //zakladne veci (nemenit)
    
@@ -14,30 +15,20 @@ string title = @"
 
 ";
 
-Console.WriteLine(title);                                                                      //title
+Console.WriteLine(title);                                                                      //uvodna grafika
 Console.WriteLine("Načítavam hru...");
-System.Threading.Thread.Sleep(3000);                                                              //pauza 3s
+System.Threading.Thread.Sleep(3000);                                                              //pauza 3s pre animaciu nacitania
 Console.Clear();
 
 
 
 
-
-
-
-
-
-Console.WriteLine("Zadaj svoje meno: ");
+Console.WriteLine(" Pre pokračovanie zadaj svoj nickname: ");                                                      // zadanie mena
 string playerName = Console.ReadLine();
-Console.WriteLine("Ahoj " + playerName + ", prave si vstupil do arény plnej príšer!");       //meno
-
-
-
-
-
-
-
-
+Console.WriteLine("Ahoj " + playerName + ", prave si vstupil do hry Witcher Arena, dúfam že si pripravený na boj!");       //meno
+Console.WriteLine("Načítavam postavy...");
+System.Threading.Thread.Sleep(4000);                                                              //pauza 4s pre animaciu nacitania
+Console.Clear();
 
 Console.WriteLine("Vyber si svoju postavu: ");                                              // výber postavy
 Console.WriteLine("1. Alex:");
@@ -52,7 +43,7 @@ switch (character)
         Console.WriteLine("Vybral si si Steve.");
         break;
     default:
-        Console.WriteLine("Neplatná voľba, vyber si Alex alebo Chomik.");
+        Console.WriteLine("Neplatná voľba, vyber si Alex alebo Steve.");
         break;
 }
 Console.WriteLine("Stlač ENTER pre pokračovanie...");                                       // enter na pokračovanie a zacanie hry
@@ -68,16 +59,16 @@ if (character == "1")
 }
 else if (character == "2")                                                                      //Postava 2 (Steve)
 {
-    Console.WriteLine("  0   ");
+    Console.WriteLine("  00   ");
     Console.WriteLine("  | ");
     Console.WriteLine(" / / ");
 }
 
-Console.WriteLine("Pre nacitanie areny stlac ENTER...");                                            //nacitanie areny
+Console.WriteLine("Pre načítanie arény stlač ENTER...");                                            //nacitanie areny
 Console.ReadLine();
 Console.Clear();
 
-Console.WriteLine("Vitaj v arene!");                                                                 //vstup do areny
+Console.WriteLine("Vitaj v prvej aréne!");                                                                 //vstup do areny
 
 
 int hpP = HpPlayer();                                                                            // načita život hráča
@@ -96,9 +87,11 @@ int HpMonster()
     return hpMonster;
 }
 Console.WriteLine("Prvá príšera sa objavuje...");                                              //objavenie príšery
-Console.WriteLine("Stlac ENTER pre boj");
+Console.WriteLine("Stlač ENTER pre boj");
 Console.ReadLine();
+Console.BackgroundColor = ConsoleColor.Red;                                               //zmena farby pozadia
 Console.Clear();
+
 
 int jedenHITM = 5;                                                                          // prvý hit príšere
 int druhyHITM = 3;                                                                         // druhý hit príšere
@@ -108,9 +101,17 @@ int druhyHITP = 15;                                                             
                                                                   
 
 
+int jedenHIT = 5;
+
+
 Console.WriteLine("   (0)   ");                                                                //Príšera
+
 Console.WriteLine("Goblin>Prisera");
 Console.WriteLine("Pre HIT stlac H");
+
+Console.WriteLine("Hagy>Prisera");
+Console.WriteLine("Pre HIT stlač H");
+
 
 int HpM2 = 15;                                                                               // život prišery po prvom zápase
 int HpM4 = 12;                                                                              // život príšery po druhom zápase
@@ -145,6 +146,7 @@ string action = Console.ReadLine();                                             
 }
     Console.WriteLine("Stlac ENTER pre pokračovanie...");                                   // enter na pokračovanie
 Console.ReadLine();
+
     Console.Clear();
 
 
@@ -169,8 +171,8 @@ else if (HpM6 == 0);
     int HpM5 = HpM4 - criticalHITM;
     Console.WriteLine($"Život príšery: {HpM5}");         //odčítanie HP po kritickom hite príšery
 }
+Console.WriteLine("Gratulujeme, úspešne si prešiel prvou arénou!");       //koniec prvej arény
 
-Console.WriteLine("Gratulujeme, úspešne si prešiel prvou arénou!");                       //koniec prvej arény
 
 
 
@@ -186,4 +188,5 @@ Console.WriteLine("Gratulujeme, úspešne si prešiel prvou arénou!");         
 //   {
 //        Console.WriteLine("Pokračuj v boji!");
 //}
+
 
