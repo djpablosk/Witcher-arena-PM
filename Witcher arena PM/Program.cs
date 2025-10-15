@@ -5,5 +5,10 @@ Console.WriteLine($"Witcher Arena PM - Version {version}"); //zakladne veci neme
    
 Console.WriteLine("Vitaj v Witcher Arena ");
 
+string zobrazenie = "*";
+Console.WriteLine($""
+
+
+
 
 
