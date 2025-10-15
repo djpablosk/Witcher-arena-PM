@@ -15,6 +15,9 @@ string title = @"
 ";
 
 Console.WriteLine(title);                                                                      //title
+Console.WriteLine("Načítavam hru...");
+System.Threading.Thread.Sleep(3000);                                                              //pauza 3s
+Console.Clear();
 
 
 
