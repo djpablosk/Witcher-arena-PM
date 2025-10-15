@@ -59,7 +59,7 @@ int hpP = HpPlayer();  // načita život hráča
 int HpPlayer()
 {
     const int hpPlayer = 100;       
-    Console.WriteLine($"Život hráča: {hpPlayer}");
+    Console.WriteLine($"Život hráča {playerName}: {hpPlayer}");
     return hpPlayer;
 }
 
