@@ -6,27 +6,27 @@ Console.Clear();
 Console.WriteLine($"Witcher Arena PM - Version {version}");                                   //zakladne veci (nemenit)
    
 Console.WriteLine("Vitaj v Witcher Arena ");                                                 //welcome veta
+string title = @"
+                __________
+\    /     ||        |          /\          |               /   \
+ \  /      ||        |         /  \         |               |. .|
+  \/       ||        |        /    \    \ _ /               \_ _/
+
+";
+
+Console.WriteLine(title);                                                                      //title
+
+
+
+
+
+
+
+
 
 Console.WriteLine("Zadaj svoje meno: ");
 string playerName = Console.ReadLine();
 Console.WriteLine("Ahoj " + playerName + ", prave si vstupil do arény plnej príšer!");       //meno
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -108,16 +108,16 @@ Console.WriteLine("Pre HIT stlac H");
     if (action == "H" || action == "h")
     {
     int HpM2 = HpM - jedenHIT;
-     Console.WriteLine($"Život príšery: {HpM2}");
-    }
+     Console.WriteLine($"Život príšery: {HpM2}");                                               //odčítanie HP príšery
+}
     if (HpM <= 0)
     {
         Console.WriteLine("Príšera porazená!");
     }
     else
     {
-        Console.WriteLine("Príšera útočí naspäť!");
-        int HpP2 = hpP - jedenHIT;
+        Console.WriteLine("Príšera útočí naspäť!");                                             //útok príšery
+    int HpP2 = hpP - jedenHIT;
         Console.WriteLine($"Život hráča {playerName}: {HpP2}");
     }
     if (hpP <= 0)
@@ -128,8 +128,8 @@ Console.WriteLine("Pre HIT stlac H");
     {
         Console.WriteLine("Pokračuj v boji!");
 }
-    Console.WriteLine("Stlac ENTER pre pokračovanie...");
-    Console.ReadLine();
+    Console.WriteLine("Stlac ENTER pre pokračovanie...");                                   // enter na pokračovanie
+Console.ReadLine();
     Console.Clear();
 Console.WriteLine("Teraz mas moznost sa uzdravit o 10 HP stlac D");                       //možnost liečenia
 string heal = Console.ReadLine();
