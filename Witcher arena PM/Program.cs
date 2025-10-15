@@ -28,22 +28,6 @@ int HpMonster()
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Console.WriteLine("Vyber si svoju postavu: ");                                              // výber postavy
 Console.WriteLine("1. Alex:");
 Console.WriteLine("2. Chomik:");
@@ -82,7 +66,7 @@ Console.WriteLine("Pre nacitanie areny stlac ENTER...");                        
 Console.ReadLine();
 Console.Clear();
 
-Console.WriteLine("Vytaj v arene!");                                           //vstup do areny
+Console.WriteLine("Vitaj v arene!");                                           //vstup do areny
 
 
 
