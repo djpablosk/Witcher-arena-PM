@@ -7,3 +7,46 @@ Console.WriteLine("Vitaj v Witcher Arena ");
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const int hpPlayer = 100;       // zivoty hraca
+const int hpMonster = 20;      // zivoty prisery
+
