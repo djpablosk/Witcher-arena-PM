@@ -2,6 +2,8 @@
 Console.BackgroundColor = ConsoleColor.DarkBlue;
 Console.Clear();
 Console.WriteLine($"Witcher Arena PM - Version {version}"); //zakladne veci nemenit
-                                                          
+   
+Console.WriteLine("Vitaj v Witcher Arena ");
+
 
 
