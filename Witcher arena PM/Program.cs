@@ -3,20 +3,42 @@
 System.Version version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
 Console.BackgroundColor = ConsoleColor.DarkBlue;
 Console.Clear();
-Console.WriteLine($"Witcher Arena PM - Version {version}"); //zakladne veci (nemenit)
+Console.WriteLine($"Witcher Arena PM - Version {version}");                                   //zakladne veci (nemenit)
    
-Console.WriteLine("Vitaj v Witcher Arena "); //welcome veta
+Console.WriteLine("Vitaj v Witcher Arena ");                                                 //welcome veta
 
 Console.WriteLine("Zadaj svoje meno: ");
 string playerName = Console.ReadLine();
-Console.WriteLine("Ahoj " + playerName + ", prave si vstupil do arény plnej príšer!");  //meno
+Console.WriteLine("Ahoj " + playerName + ", prave si vstupil do arény plnej príšer!");       //meno
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 Console.WriteLine("Vyber si svoju postavu: ");                                              // výber postavy
 Console.WriteLine("1. Alex:");
-Console.WriteLine("2. Chomik:");
+Console.WriteLine("2. Steve:");
 string character = Console.ReadLine();
 switch (character)
 {
@@ -24,7 +46,7 @@ switch (character)
         Console.WriteLine("Vybral si si Alex.");
         break;
     case "2":
-        Console.WriteLine("Vybral si si Chomik.");
+        Console.WriteLine("Vybral si si Steve.");
         break;
     default:
         Console.WriteLine("Neplatná voľba, vyber si Alex alebo Chomik.");
@@ -41,7 +63,7 @@ if (character == "1")
     Console.WriteLine(" /| ");
     Console.WriteLine(" / \\ ");
 }
-else if (character == "2")                                                                      //Postava 2 (Chomik)
+else if (character == "2")                                                                      //Postava 2 (Steve)
 {
     Console.WriteLine("  0   ");
     Console.WriteLine("  | ");
@@ -52,9 +74,10 @@ Console.WriteLine("Pre nacitanie areny stlac ENTER...");                        
 Console.ReadLine();
 Console.Clear();
 
-Console.WriteLine("Vitaj v arene!");                                           //vstup do areny
+Console.WriteLine("Vitaj v arene!");                                                                 //vstup do areny
 
-int hpP = HpPlayer();  // načita život hráča
+
+int hpP = HpPlayer();                                                                            // načita život hráča
 int HpPlayer()
 {
     const int hpPlayer = 100;
@@ -62,13 +85,64 @@ int HpPlayer()
     return hpPlayer;
 }
 
-int HpM = HpMonster(); // načita život príšery
+int HpM = HpMonster();                                                                       // načita život príšery
 int HpMonster()
 {
     const int hpMonster = 20;
     Console.WriteLine($"Život príšery: {hpMonster}");
     return hpMonster;
 }
+Console.WriteLine("Prvá príšera sa objavuje...");                                              //objavenie príšery
+Console.WriteLine("Stlac ENTER pre boj");
+Console.ReadLine();
+Console.Clear();
+
+int jedenHIT = 5;
+
+
+Console.WriteLine("   (0)   ");                                                                //Príšera
+Console.WriteLine("Hagy>Prisera");
+Console.WriteLine("Pre HIT stlac H");
+
+    string action = Console.ReadLine();                                                         //HIT hraca
+    if (action == "H" || action == "h")
+    {
+    int HpM2 = HpM - jedenHIT;
+     Console.WriteLine($"Život príšery: {HpM2}");
+    }
+    if (HpM <= 0)
+    {
+        Console.WriteLine("Príšera porazená!");
+    }
+    else
+    {
+        Console.WriteLine("Príšera útočí naspäť!");
+        int HpP2 = hpP - jedenHIT;
+        Console.WriteLine($"Život hráča {playerName}: {HpP2}");
+    }
+    if (hpP <= 0)
+    {
+        Console.WriteLine("Si mŕtvy!");
+    }
+    else
+    {
+        Console.WriteLine("Pokračuj v boji!");
+}
+    Console.WriteLine("Stlac ENTER pre pokračovanie...");
+    Console.ReadLine();
+    Console.Clear();
+Console.WriteLine("Teraz mas moznost sa uzdravit o 10 HP stlac D");                       //možnost liečenia
+string heal = Console.ReadLine();
+if (heal == "D" || heal == "d")
+    {
+        int HpP3 = hpP + 10;
+        Console.WriteLine($"Život hráča {playerName}: {HpP3}");
+    }
+    else
+    {
+        Console.WriteLine("Pokračuj v boji!");
+}
+
 
 
 
