@@ -11,21 +11,7 @@ Console.WriteLine("Zadaj svoje meno: ");
 string playerName = Console.ReadLine();
 Console.WriteLine("Ahoj " + playerName + ", prave si vstupil do arény plnej príšer!");  //meno
 
-int hpP = HpPlayer();  // načita život hráča
-int HpPlayer()
-{
-    const int hpPlayer = 100;       
-    Console.WriteLine($"Život hráča {playerName}: {hpPlayer}");
-    return hpPlayer;
-}
 
-int HpM = HpMonster(); // načita život príšery
-int HpMonster()
-{
-    const int hpMonster = 20;     
-    Console.WriteLine($"Život príšery: {hpMonster}");
-    return hpMonster;
-}
 
 
 Console.WriteLine("Vyber si svoju postavu: ");                                              // výber postavy
@@ -67,6 +53,22 @@ Console.ReadLine();
 Console.Clear();
 
 Console.WriteLine("Vitaj v arene!");                                           //vstup do areny
+
+int hpP = HpPlayer();  // načita život hráča
+int HpPlayer()
+{
+    const int hpPlayer = 100;
+    Console.WriteLine($"Život hráča {playerName}: {hpPlayer}");
+    return hpPlayer;
+}
+
+int HpM = HpMonster(); // načita život príšery
+int HpMonster()
+{
+    const int hpMonster = 20;
+    Console.WriteLine($"Život príšery: {hpMonster}");
+    return hpMonster;
+}
 
 
 
