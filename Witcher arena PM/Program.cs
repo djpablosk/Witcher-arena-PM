@@ -1,7 +1,8 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using System.Xml.Serialization;
 
-System.Version version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
-Console.BackgroundColor = ConsoleColor.DarkBlue;
+System.Version version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;   //zistenie verzie
+Console.BackgroundColor = ConsoleColor.DarkBlue;                                                //nastavenie farby pozadia
 Console.Clear();
 Console.WriteLine($"Witcher Arena PM - Version {version}");                                   //zakladne veci (nemenit)
    
@@ -14,28 +15,17 @@ string title = @"
 
 ";
 
-Console.WriteLine(title);                                                                      //title
+Console.WriteLine(title);                                                                      //uvodna grafika
 Console.WriteLine("Načítavam hru...");
-System.Threading.Thread.Sleep(3000);                                                              //pauza 3s
+System.Threading.Thread.Sleep(3000);                                                              //pauza 3s pre animaciu nacitania
 Console.Clear();
 
 
 
 
-
-
-
-
-
-Console.WriteLine("Zadaj svoje meno: ");
+Console.WriteLine("Zadaj svoj nicname: ");                                                      // zadanie mena
 string playerName = Console.ReadLine();
 Console.WriteLine("Ahoj " + playerName + ", prave si vstupil do arény plnej príšer!");       //meno
-
-
-
-
-
-
 
 
 
@@ -68,7 +58,7 @@ if (character == "1")
 }
 else if (character == "2")                                                                      //Postava 2 (Steve)
 {
-    Console.WriteLine("  0   ");
+    Console.WriteLine("  00   ");
     Console.WriteLine("  | ");
     Console.WriteLine(" / / ");
 }
@@ -98,10 +88,11 @@ int HpMonster()
 Console.WriteLine("Prvá príšera sa objavuje...");                                              //objavenie príšery
 Console.WriteLine("Stlac ENTER pre boj");
 Console.ReadLine();
+Console.BackgroundColor = ConsoleColor.Red;                                               //zmena farby pozadia
 Console.Clear();
 
-int jedenHIT = 5;
 
+int jedenHIT = 5;
 
 Console.WriteLine("   (0)   ");                                                                //Príšera
 Console.WriteLine("Hagy>Prisera");
@@ -133,7 +124,8 @@ Console.WriteLine("Pre HIT stlac H");
 }
     Console.WriteLine("Stlac ENTER pre pokračovanie...");                                   // enter na pokračovanie
 Console.ReadLine();
-    Console.Clear();
+Console.BackgroundColor = ConsoleColor.DarkGreen;                                                //nastavenie farby pozadia
+Console.Clear();
 Console.WriteLine("Teraz mas moznost sa uzdravit o 10 HP stlac D");                       //možnost liečenia
 string heal = Console.ReadLine();
 if (heal == "D" || heal == "d")
@@ -145,6 +137,7 @@ if (heal == "D" || heal == "d")
     {
         Console.WriteLine("Pokračuj v boji!");
 }
+
 
 
 
