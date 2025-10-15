@@ -93,6 +93,7 @@ Console.BackgroundColor = ConsoleColor.Red;                                     
 Console.Clear();
 
 
+
 int jedenHITM = 5;                                                                          // prvý hit príšere
 int druhyHITM = 3;                                                                         // druhý hit príšere
 int criticalHITM = 12;                                                                     // kritický hit príšere
@@ -101,13 +102,18 @@ int druhyHITP = 15;                                                             
                                                                   
 
 
-int jedenHIT = 5;
 
+int jedenHIT = 5;
 
 Console.WriteLine("   (0)   ");                                                                //Príšera
 
+
 Console.WriteLine("Goblin>Prisera");
 Console.WriteLine("Pre HIT stlac H");
+
+Console.WriteLine("Hagy>Prisera");
+Console.WriteLine("Pre HIT stlač H");
+
 
 Console.WriteLine("Hagy>Prisera");
 Console.WriteLine("Pre HIT stlač H");
@@ -147,6 +153,7 @@ string action = Console.ReadLine();                                             
     Console.WriteLine("Stlac ENTER pre pokračovanie...");                                   // enter na pokračovanie
 Console.ReadLine();
 
+
     Console.Clear();
 
 
@@ -156,37 +163,43 @@ if (action2 == "H" || action2 == "h")
 {
     int HpM3 = HpM2 - druhyHITM;
     Console.WriteLine($"Život príšery: {HpM3}");         //odčítanie HP príšery po druhom zápase
+
+
+    Console.WriteLine("Príšera znova útočí!");
+    int HpP3 = hpP2 - druhyHITP;
+    Console.WriteLine($"Život hráča {playerName}: {HpP3}");
+    Console.WriteLine("Pre ďalší HIT stlač H");
+    string action3 = Console.ReadLine();                                                         //3HIT hraca
+    if (action3 == "H" || action3 == "h")
+    {
+        Console.WriteLine("Udelil si kritický HIT príšere");
+    }
+    else if (HpM6 == 0) ;
+    {
+        int HpM5 = HpM4 - criticalHITM;
+        Console.WriteLine($"Život príšery: {HpM5}");         //odčítanie HP po kritickom hite príšery
+    }
 }
-   Console.WriteLine("Príšera znova útočí!");
-   int HpP3 = hpP2 - druhyHITP;
-   Console.WriteLine($"Život hráča {playerName}: {HpP3}");
-Console.WriteLine("Pre ďalší HIT stlač H");
-string action3 = Console.ReadLine();                                                         //3HIT hraca
-if (action3 == "H" || action3 == "h")
-{
-   Console.WriteLine("Udelil si kritický HIT príšere");
-}
-else if (HpM6 == 0);
-{
-    int HpM5 = HpM4 - criticalHITM;
-    Console.WriteLine($"Život príšery: {HpM5}");         //odčítanie HP po kritickom hite príšery
-}
-Console.WriteLine("Gratulujeme, úspešne si prešiel prvou arénou!");       //koniec prvej arény
+Console.WriteLine("Gratulujeme, úspešne si prešiel prvou arénou!");  //koniec prvej arény
 
 
 
 
 
-//Console.WriteLine("Teraz mas moznost sa uzdravit o 10 HP stlac D");                       //možnost liečenia
-//string heal = Console.ReadLine();
-//if (heal == "D" || heal == "d")
-//    {
-//       int HpP4 = hpP2 + 10;
-//      Console.WriteLine($"Život hráča {playerName}: {HpP4}");
-//  }
-//  else
-//   {
-//        Console.WriteLine("Pokračuj v boji!");
-//}
+    
 
 
+    //Console.BackgroundColor = ConsoleColor.DarkGreen;                                                //nastavenie farby pozadia
+    //Console.Clear();
+    //Console.WriteLine("Teraz máš možnosť sa uzdraviť o 10 HP stlač D");                       //možnost liečenia
+    //string heal = Console.ReadLine();
+    //if (heal == "D" || heal == "d")
+    //{
+    //    int HpP3 = hpP + 10;
+    //    Console.WriteLine($"Život hráča {playerName}: {HpP3}");
+    //}
+    //else
+    //{
+    //    Console.WriteLine("Pokračuj v boji!");
+
+    //}
