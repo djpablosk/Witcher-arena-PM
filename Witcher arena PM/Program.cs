@@ -145,11 +145,7 @@ string action = Console.ReadLine();                                             
     {
         Console.WriteLine("Pokračuj v boji!");
 }
-    Console.WriteLine("Stlac ENTER pre pokračovanie...");                                   // enter na pokračovanie
-Console.ReadLine();
-
-
-    Console.Clear();
+    
 
 
 Console.WriteLine("Znova stlač H");
@@ -180,21 +176,17 @@ Console.WriteLine("Gratulujeme, úspešne si prešiel prvou arénou!");  //konie
 
 
 
+Console.BackgroundColor = ConsoleColor.DarkGreen;                                                //nastavenie farby pozadia
+Console.Clear();
+Console.WriteLine("Teraz máš možnosť sa uzdraviť o 10 HP stlač D");                       //možnost liečenia
+string heal = Console.ReadLine();
+if (heal == "D" || heal == "d")
+{
+    int HpP3 = hpP3 + 10;
+    Console.WriteLine($"Život hráča {playerName}: {HpP3}");
+}
+  else
+    {
+        Console.WriteLine("Pokračuj v boji!");
 
-    
-
-
-    //Console.BackgroundColor = ConsoleColor.DarkGreen;                                                //nastavenie farby pozadia
-    //Console.Clear();
-    //Console.WriteLine("Teraz máš možnosť sa uzdraviť o 10 HP stlač D");                       //možnost liečenia
-    //string heal = Console.ReadLine();
-    //if (heal == "D" || heal == "d")
-    //{
-    //    int HpP3 = hpP + 10;
-    //    Console.WriteLine($"Život hráča {playerName}: {HpP3}");
-    //}
-    //else
-    //{
-    //    Console.WriteLine("Pokračuj v boji!");
-
-    //}
+    }
