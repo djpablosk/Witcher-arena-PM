@@ -111,12 +111,7 @@ Console.WriteLine("   (0)   ");                                                 
 Console.WriteLine("Goblin>Prisera");
 Console.WriteLine("Pre HIT stlac H");
 
-Console.WriteLine("Hagy>Prisera");
-Console.WriteLine("Pre HIT stlač H");
 
-
-Console.WriteLine("Hagy>Prisera");
-Console.WriteLine("Pre HIT stlač H");
 
 
 int HpM2 = 15;                                                                               // život prišery po prvom zápase
