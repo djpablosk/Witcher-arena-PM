@@ -111,12 +111,7 @@ Console.WriteLine("   (0)   ");                                                 
 Console.WriteLine("Goblin>Prisera");
 Console.WriteLine("Pre HIT stlac H");
 
-Console.WriteLine("Hagy>Prisera");
-Console.WriteLine("Pre HIT stlač H");
 
-
-Console.WriteLine("Hagy>Prisera");
-Console.WriteLine("Pre HIT stlač H");
 
 
 int HpM2 = 15;                                                                               // život prišery po prvom zápase
@@ -180,26 +175,31 @@ if (action2 == "H" || action2 == "h")
         Console.WriteLine($"Život príšery: {HpM5}");         //odčítanie HP po kritickom hite príšery
     }
 }
+
+
 Console.WriteLine("Gratulujeme, úspešne si prešiel prvou arénou!");  //koniec prvej arény
+Console.WriteLine("Do vstupu do uzdravovaciej miestnosti stlač ENTER");
+Console.ReadLine();
 
+Console.BackgroundColor = ConsoleColor.DarkGreen;                                                //nastavenie farby pozadia
+  Console.Clear();
+System.Threading.Thread.Sleep(2000);
+Console.WriteLine("Vitaj v uzdravovacej miestnosti!");                                               //vstup do uzdravovacej miestnosti
+Console.WriteLine("Teraz máš možnosť sa uzdraviť o 10 HP stlač D");                       //možnost liečenia
+    string heal = Console.ReadLine();
+if (heal == "D" || heal == "d")
+{
+    int HpP3 = hpP3 + 10;
+    Console.WriteLine("Gratulujeme, úspešne si sa uzdravil");
+    Console.WriteLine($"Tvoje aktuálne Hpčka sú: {HpP3}");
+}
 
-
-
-
-    
-
-
-    //Console.BackgroundColor = ConsoleColor.DarkGreen;                                                //nastavenie farby pozadia
-    //Console.Clear();
-    //Console.WriteLine("Teraz máš možnosť sa uzdraviť o 10 HP stlač D");                       //možnost liečenia
-    //string heal = Console.ReadLine();
-    //if (heal == "D" || heal == "d")
-    //{
-    //    int HpP3 = hpP + 10;
-    //    Console.WriteLine($"Život hráča {playerName}: {HpP3}");
-    //}
-    //else
-    //{
-    //    Console.WriteLine("Pokračuj v boji!");
-
-    //}
+Console.WriteLine("Do vstupu do druhej arény stlač ENTER...");
+Console.ReadLine();
+Console.BackgroundColor = ConsoleColor.DarkYellow;                                                             //nastavenie farby pozadia
+Console.Clear();
+Console.WriteLine("Vitaj v druhej aréne!");                                                                 //vstup do druhej areny
+System.Threading.Thread.Sleep(1500);
+Console.WriteLine("Práve sa zobúdza príšera Kiklop");
+System.Threading.Thread.Sleep(2500);
+Console.WriteLine("Príšera sa zoubudila");
