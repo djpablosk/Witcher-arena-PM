@@ -176,34 +176,62 @@ if (action2 == "H" || action2 == "h")
         Console.WriteLine($"Život príšery: {HpM5}");         //odčítanie HP po kritickom hite príšery
     }
 }
-
-
-Console.WriteLine("Gratulujeme, úspešne si prešiel prvou arénou!");  //koniec prvej arény
-Console.WriteLine("Do vstupu do uzdravovaciej miestnosti stlač ENTER");
-Console.ReadLine();
-
-Console.BackgroundColor = ConsoleColor.DarkGreen;                                                //nastavenie farby pozadia
-  Console.Clear();
-System.Threading.Thread.Sleep(1500);
-Console.WriteLine("Vitaj v uzdravovacej miestnosti!");                                               //vstup do uzdravovacej miestnosti
-Console.WriteLine("Teraz máš možnosť sa uzdraviť o 25 HP stlač D");                       //možnost liečenia
-    string heal = Console.ReadLine();
-if (heal == "D" || heal == "d")
+Console.WriteLine("Z príšery vypadol uzdravovací lektvar");                             //vypadnutie lektvaru)
+Console.WriteLine("Pre získanie lektvaru stlač L");
+string lektvar = Console.ReadLine();
+if (lektvar == "L" || lektvar == "l")
 {
-    int HpP3 = hpP3 + 25;
-    Console.WriteLine("Gratulujeme, úspešne si sa uzdravil");
-    Console.WriteLine($"Tvoje aktuálne Hpčka sú: {HpP3}");
+    
+    Console.WriteLine("Zobral si lektvar do inventára");
 }
-int HpM0 = 25;
+Console.WriteLine("Pre otvorenie inventára stlač E");
+string inventar = Console.ReadLine();
+
+List<string> inventory = new List<string>();
+if (inventar == "E" || inventar == "e")
+{
+    inventory.Add("Uzdravovací lektvar");
+    Console.WriteLine("Inventár:");
+    foreach (string item in inventory)
+    {
+        Console.WriteLine("- " + item);
+    }
+}
+Console.WriteLine("Chceš použiť lektvar na uzdravenie? Áno (A) / Nie (N)");
+string pouzitLektvar = Console.ReadLine();
+if (pouzitLektvar == "A" || pouzitLektvar == "a")
+{
+    int HpP4 = hpP3 + 25;
+    Console.WriteLine($"Použil si lektvar a tvoje Hpčka sú {HpP4}");
+
+}
+else if (pouzitLektvar == "N" || pouzitLektvar == "n")
+{
+    Console.WriteLine("Môžeš pokračovať v boji");
+}
+
+    Console.WriteLine("Gratulujeme, úspešne si prešiel prvou arénou!");  //koniec prvej arény
+
+
+
+
 int HpM7 = 60;
 int HpM9 = 45;
 int HpM11 = 19;
-int HpP4 = 94;
+int HpM12 = 20;
+int HpM14 = 5;
+int HpP5 = 94;
 int HpP6 = 69;
+
+int HpP19 = 43;
+int HpP21 = 19;
+int HpP7 = 44;
 int hit1naP = 25;
 int hit2naP = 26;
+int hit3naP = 35;
 int hit1nakiklopa = 15;
 int hit2nakiklopa = 25;
+int hit3nakiklopa = 15;
 Console.WriteLine("Pre vstup do druhej arény stlač ENTER...");
 Console.ReadLine();
 Console.BackgroundColor = ConsoleColor.DarkYellow;                                                             //nastavenie farby pozadia
@@ -215,12 +243,13 @@ Console.WriteLine("   <0>   ");
 System.Threading.Thread.Sleep(1500);
 Console.WriteLine("Kiklop sa zoubudil");
 
-int hpP1 = HpPlayer1();
-int HpPlayer1()
+if (pouzitLektvar == "A" || pouzitLektvar == "a")
 {
-    const int hpPlayer = 94;
-    Console.WriteLine($"Život hráča {playerName}: {HpP4}");
-    return hpPlayer;
+    Console.WriteLine($"Život hráča {playerName}: {HpP5}");
+}
+else if (pouzitLektvar == "N" || pouzitLektvar == "n")
+{
+    Console.WriteLine($"Život hráča {playerName}: {HpP6}");
 }
 int hpM1 =  HpMonster1();
 int  HpMonster1()
@@ -237,36 +266,61 @@ System.Threading.Thread.Sleep(500);
 Console.BackgroundColor = ConsoleColor.Red;                                               //zmena farby pozadia
 Console.Clear();
 Console.WriteLine("Pre útok stlač H");
-string action4 = Console.ReadLine();                                                         //HIT hraca na Kiklopa
-if (action4 == "H" || action4 == "h")
+string action4 = Console.ReadLine();                                                     //HIT hraca na Kiklopa
+
+
+ if (pouzitLektvar == "A" || pouzitLektvar == "a")
 {
- int HpM8 = HpM7 - hit1nakiklopa;
+    int HpM8 = HpM7 - hit1nakiklopa;
     System.Threading.Thread.Sleep(1500);
     Console.WriteLine($"Život Kiklopa: {HpM8}");                                               //odčítanie HP Kiklopa
     Console.WriteLine("Kiklop útočí naspäť!");                                             //útok Kiklopa
     System.Threading.Thread.Sleep(1500);
-    int HpP7 = HpP4 - hit1naP;
+    int HpP18 = HpP5 - hit1naP;
     Console.WriteLine($"Život hráča {playerName}: {HpP6}");
-}  
-
-string action5 = Console.ReadLine();
-if (action5 == "H" || action5 == "h")
+}
+else if (pouzitLektvar == "N" || pouzitLektvar == "n")
 {
-    int HpM12 = HpM9 - hit2nakiklopa;
+    int HpM8 = HpM7 - hit1nakiklopa;
+    System.Threading.Thread.Sleep(1500);
+    Console.WriteLine($"Život Kiklopa: {HpM8}");                                               //odčítanie HP Kiklopa
+    Console.WriteLine("Kiklop útočí naspäť!");                                             //útok Kiklopa
+    System.Threading.Thread.Sleep(1500);
+    int HpP8 = HpP6 - hit1naP;
+    Console.WriteLine($"Život hráča {playerName}: {HpP7}");
+}
+    string action5 = Console.ReadLine();
+if (pouzitLektvar == "A" || pouzitLektvar == "a")
+{
+    int HpM13 = HpM9 - hit2nakiklopa;
     System.Threading.Thread.Sleep(1500);
     Console.WriteLine($"Život Kiklopa: {HpM12}");                                               //odčítanie HP Kiklopa
     Console.WriteLine("Kiklop útočí naspäť!");                                             //útok Kiklopa
     System.Threading.Thread.Sleep(1500);
-    int HpP8 = HpP6 - hit2naP;
-    Console.WriteLine($"Život hráča {playerName}: {HpP8}");
+    int HpP20 = HpP6 - hit2naP;
+    Console.WriteLine($"Život hráča {playerName}: {HpP19}");
 }
- string action6 = Console.ReadLine();  
+else if (pouzitLektvar == "N" || pouzitLektvar == "n")
+{
+    int HpM13 = HpM9 - hit2nakiklopa;
+    System.Threading.Thread.Sleep(1500);
+    Console.WriteLine($"Život Kiklopa: {HpM12}");                                               //odčítanie HP Kiklopa
+    Console.WriteLine("Kiklop útočí naspäť!");                                             //útok Kiklopa
+    System.Threading.Thread.Sleep(1500);
+    int HpP22 = HpP7 - hit2naP;
+    Console.WriteLine($"Život hráča {playerName}: {HpP21}");
+
+}
+    string action6 = Console.ReadLine();  
     if (action6 == "H" || action6 == "h")
 {
-    int HpM13 = HpM0 -hit2nakiklopa;
+    int HpM15 = HpM12 -hit3nakiklopa;
     System.Threading.Thread.Sleep(1500) ;
-    Console.WriteLine($"Zivot Kiklopa: {HpM13}");
-    Console.WriteLine("Gratulujeme, úspešne si prešiel druhou arénou!");                    //koniec druhej arény
+    Console.WriteLine($"Zivot Kiklopa: {HpM14}");
+    System.Threading.Thread.Sleep(1500);
+    Console.WriteLine("Kiklop útočí");
+    int HpP10 = HpP6 - hit3naP;
+    Console.WriteLine($"Život hráča {playerName}: {HpP10}");
 
 }   
     System.Threading.Thread.Sleep(2000);
