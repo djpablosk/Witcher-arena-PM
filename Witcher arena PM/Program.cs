@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
 using System.Xml.Serialization;
 
 System.Version version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;   //zistenie verzie
@@ -17,7 +18,7 @@ string title = @"
 
 Console.WriteLine(title);                                                                      //uvodna grafika
 Console.WriteLine("Načítavam hru...");
-System.Threading.Thread.Sleep(3000);                                                              //pauza 3s pre animaciu nacitania
+System.Threading.Thread.Sleep(2500);                                                              //pauza 2,5s pre animaciu nacitania
 Console.Clear();
 
 
@@ -27,7 +28,7 @@ Console.WriteLine(" Pre pokračovanie zadaj svoj nickname: ");                  
 string playerName = Console.ReadLine();
 Console.WriteLine("Ahoj " + playerName + ", prave si vstupil do hry Witcher Arena, dúfam že si pripravený na boj!");       //meno
 Console.WriteLine("Načítavam postavy...");
-System.Threading.Thread.Sleep(4000);                                                              //pauza 4s pre animaciu nacitania
+System.Threading.Thread.Sleep(2000);                                                              //pauza 2s pre animaciu nacitania
 Console.Clear();
 
 Console.WriteLine("Vyber si svoju postavu: ");                                              // výber postavy
@@ -183,7 +184,7 @@ Console.ReadLine();
 
 Console.BackgroundColor = ConsoleColor.DarkGreen;                                                //nastavenie farby pozadia
   Console.Clear();
-System.Threading.Thread.Sleep(2000);
+System.Threading.Thread.Sleep(1500);
 Console.WriteLine("Vitaj v uzdravovacej miestnosti!");                                               //vstup do uzdravovacej miestnosti
 Console.WriteLine("Teraz máš možnosť sa uzdraviť o 25 HP stlač D");                       //možnost liečenia
     string heal = Console.ReadLine();
@@ -193,7 +194,7 @@ if (heal == "D" || heal == "d")
     Console.WriteLine("Gratulujeme, úspešne si sa uzdravil");
     Console.WriteLine($"Tvoje aktuálne Hpčka sú: {HpP3}");
 }
-
+int HpM0 = 25;
 int HpM7 = 60;
 int HpM9 = 45;
 int HpM11 = 19;
@@ -210,7 +211,8 @@ Console.Clear();
 Console.WriteLine("Vitaj v druhej aréne!");                                                                 //vstup do druhej areny
 System.Threading.Thread.Sleep(1500);
 Console.WriteLine("Práve sa zobúdza príšera Kiklop");
-System.Threading.Thread.Sleep(2500);
+Console.WriteLine("   <0>   ");
+System.Threading.Thread.Sleep(1500);
 Console.WriteLine("Kiklop sa zoubudil");
 
 int hpP1 = HpPlayer1();
@@ -261,5 +263,29 @@ if (action5 == "H" || action5 == "h")
  string action6 = Console.ReadLine();  
     if (action6 == "H" || action6 == "h")
 {
-    
-}    
+    int HpM13 = HpM0 -hit2nakiklopa;
+    System.Threading.Thread.Sleep(1500) ;
+    Console.WriteLine($"Zivot Kiklopa: {HpM13}");
+    Console.WriteLine("Gratulujeme, úspešne si prešiel druhou arénou!");                    //koniec druhej arény
+
+}   
+    System.Threading.Thread.Sleep(2000);
+Console.BackgroundColor = ConsoleColor.Black;
+Console.Clear();
+Console.WriteLine("Ďakujeme že ste si zahrali Witcher Arena PM!");                       //koniec hry
+Console.WriteLine("Vytvoril: Patrik a Michal");                                           
+Console.WriteLine("Verzia: " + version);                                                //verzia
+Console.WriteLine("Dátum vydania: 2025");                                               //dátum vydania
+Console.WriteLine("Stlač ENTER pre ukončenie...");
+Console.ReadLine();
+Console.Clear();
+Environment.ExitCode = 0;                                                                  //ukončenie programu
+Environment.Exit(Environment.ExitCode);
+
+
+
+
+
+
+
+
