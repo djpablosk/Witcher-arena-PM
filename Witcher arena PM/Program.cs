@@ -185,16 +185,25 @@ Console.BackgroundColor = ConsoleColor.DarkGreen;                               
   Console.Clear();
 System.Threading.Thread.Sleep(2000);
 Console.WriteLine("Vitaj v uzdravovacej miestnosti!");                                               //vstup do uzdravovacej miestnosti
-Console.WriteLine("Teraz máš možnosť sa uzdraviť o 10 HP stlač D");                       //možnost liečenia
+Console.WriteLine("Teraz máš možnosť sa uzdraviť o 25 HP stlač D");                       //možnost liečenia
     string heal = Console.ReadLine();
 if (heal == "D" || heal == "d")
 {
-    int HpP3 = hpP3 + 10;
+    int HpP3 = hpP3 + 25;
     Console.WriteLine("Gratulujeme, úspešne si sa uzdravil");
     Console.WriteLine($"Tvoje aktuálne Hpčka sú: {HpP3}");
 }
 
-Console.WriteLine("Do vstupu do druhej arény stlač ENTER...");
+int HpM7 = 60;
+int HpM9 = 45;
+int HpM11 = 19;
+int HpP4 = 94;
+int HpP6 = 69;
+int hit1naP = 25;
+int hit2naP = 26;
+int hit1nakiklopa = 15;
+int hit2nakiklopa = 25;
+Console.WriteLine("Pre vstup do druhej arény stlač ENTER...");
 Console.ReadLine();
 Console.BackgroundColor = ConsoleColor.DarkYellow;                                                             //nastavenie farby pozadia
 Console.Clear();
@@ -202,4 +211,55 @@ Console.WriteLine("Vitaj v druhej aréne!");                                    
 System.Threading.Thread.Sleep(1500);
 Console.WriteLine("Práve sa zobúdza príšera Kiklop");
 System.Threading.Thread.Sleep(2500);
-Console.WriteLine("Príšera sa zoubudila");
+Console.WriteLine("Kiklop sa zoubudil");
+
+int hpP1 = HpPlayer1();
+int HpPlayer1()
+{
+    const int hpPlayer = 94;
+    Console.WriteLine($"Život hráča {playerName}: {HpP4}");
+    return hpPlayer;
+}
+int hpM1 =  HpMonster1();
+int  HpMonster1()
+{
+    const int hpMonster = 60;
+    Console.WriteLine($"Život Kiklopa: {HpM7}");
+    return hpMonster;
+}
+
+Console.WriteLine("Stlač ENTER pre začatie boja");
+Console.ReadLine();
+Console.WriteLine("Boj začína");
+System.Threading.Thread.Sleep(500);
+Console.BackgroundColor = ConsoleColor.Red;                                               //zmena farby pozadia
+Console.Clear();
+Console.WriteLine("Pre útok stlač H");
+string action4 = Console.ReadLine();                                                         //HIT hraca na Kiklopa
+if (action4 == "H" || action4 == "h")
+{
+ int HpM8 = HpM7 - hit1nakiklopa;
+    System.Threading.Thread.Sleep(1500);
+    Console.WriteLine($"Život Kiklopa: {HpM8}");                                               //odčítanie HP Kiklopa
+    Console.WriteLine("Kiklop útočí naspäť!");                                             //útok Kiklopa
+    System.Threading.Thread.Sleep(1500);
+    int HpP7 = HpP4 - hit1naP;
+    Console.WriteLine($"Život hráča {playerName}: {HpP6}");
+}  
+
+string action5 = Console.ReadLine();
+if (action5 == "H" || action5 == "h")
+{
+    int HpM12 = HpM9 - hit2nakiklopa;
+    System.Threading.Thread.Sleep(1500);
+    Console.WriteLine($"Život Kiklopa: {HpM12}");                                               //odčítanie HP Kiklopa
+    Console.WriteLine("Kiklop útočí naspäť!");                                             //útok Kiklopa
+    System.Threading.Thread.Sleep(1500);
+    int HpP8 = HpP6 - hit2naP;
+    Console.WriteLine($"Život hráča {playerName}: {HpP8}");
+}
+ string action6 = Console.ReadLine();  
+    if (action6 == "H" || action6 == "h")
+{
+    
+}    
