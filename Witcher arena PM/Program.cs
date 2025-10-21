@@ -161,7 +161,8 @@ string action = Console.ReadLine();                                             
     if (action == "H" || action == "h")
     {
     int HpM3 = HpM - jedenHITM;
-     Console.WriteLine($"Život príšery: {HpM2}");                                               //odčítanie HP príšery
+    System.Threading.Thread.Sleep(1500);
+    Console.WriteLine($"Život príšery: {HpM2}");                                               //odčítanie HP príšery
 }
     if (HpM <= 0)
     {
@@ -169,7 +170,8 @@ string action = Console.ReadLine();                                             
     }
     else
     {
-        Console.WriteLine("Príšera útočí naspäť!");                                             //útok príšery
+        Console.WriteLine("Príšera útočí naspäť!");                      //útok príšery
+    System.Threading.Thread.Sleep(1500);
     int HpP2 = hpP - jedenHITP;
         Console.WriteLine($"Život hráča {playerName}: {HpP2}");
     }
@@ -193,10 +195,12 @@ string action2 = Console.ReadLine();                                            
 if (action2 == "H" || action2 == "h")
 {
     int HpM3 = HpM2 - druhyHITM;
+    System.Threading.Thread.Sleep(1500);
     Console.WriteLine($"Život príšery: {HpM3}");         //odčítanie HP príšery po druhom zápase
 
 
     Console.WriteLine("Príšera znova útočí!");
+    System.Threading.Thread.Sleep(1500);
     int HpP3 = hpP2 - druhyHITP;
     Console.WriteLine($"Život hráča {playerName}: {HpP3}");
     Console.WriteLine("Pre ďalší HIT stlač H");
@@ -208,6 +212,7 @@ if (action2 == "H" || action2 == "h")
     else if (HpM6 == 0) ;
     {
         int HpM5 = HpM4 - criticalHITM;
+        System.Threading.Thread.Sleep(1500);
         Console.WriteLine($"Život príšery: {HpM5}");         //odčítanie HP po kritickom hite príšery
     }
 }
