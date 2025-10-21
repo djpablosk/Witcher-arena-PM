@@ -37,7 +37,7 @@ if (opis == 'O' || opis == 'o')
     Console.WriteLine("toto je hra v ktorej bojuješ proti príšerám a snažíš sa prežiť v aréne. Vyber si svoju postavu a začni bojovať!");
    
 }
-if 
+
 
 
 
