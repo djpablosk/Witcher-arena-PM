@@ -426,7 +426,7 @@ Console.Clear();
 Console.WriteLine("Vitaj v tretej aréne!");                                                                 //vstup do tretej areny
 System.Threading.Thread.Sleep(1500);
 Console.WriteLine("Práve sa zobúdza príšera Drak");
-Console.WriteLine("    / \  ");
+Console.WriteLine("    / \\  ");
 System.Threading.Thread.Sleep(1500);
 Console.WriteLine("Drak sa zoubudil");
 Console.WriteLine("Stlač ENTER pre začatie boja");
