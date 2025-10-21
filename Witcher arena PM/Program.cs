@@ -577,16 +577,3 @@ Console.ReadLine();
 Console.Clear();
 Environment.ExitCode = 0;                                                                  //ukončenie programu
 Environment.Exit(Environment.ExitCode);
-
-
-
-
-
-
-
-
-
-
-
-
-
