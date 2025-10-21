@@ -21,7 +21,40 @@ Console.WriteLine("Načítavam hru...");
 System.Threading.Thread.Sleep(2500);                                                              //pauza 2,5s pre animaciu nacitania
 Console.Clear();
 
-
+Console.WriteLine("Vitaj v hre Witcher Arena!");
+List<string> menuOptions = new List<string> { "Hrat (H)", "Opis (O)" };                           //hlavne menu
+foreach (string option in menuOptions)
+{
+    Console.WriteLine(option);
+}
+string menuChoice = Console.ReadLine();                                                          //výber z menu
+switch (menuChoice.ToUpper())
+{
+    case "H":
+        Console.WriteLine("Začínaš hru...");                                                      //začatie hry
+        System.Threading.Thread.Sleep(1000);
+        Console.Clear();
+        break;
+    case "O":
+        Console.BackgroundColor = ConsoleColor.DarkGray;
+        Console.Clear();
+        Console.WriteLine("Witcher Arena je textová RPG hra, v ktorej si vyberieš postavu a bojuješ proti príšerám v rôznych arénach. Cieľom je prežiť a poraziť všetky príšery.");         //opis hry
+        Console.WriteLine("Hra obsahuje rôzne postavy, každá s unikátnymi schopnosťami, a rôzne arény s rôznymi príšerami.");
+        Console.WriteLine("Túto hru vytvorili Michal Vancel a Patrik Smržo");
+        Console.WriteLine("Stlač ENTER pre návrat do hlavného menu...");
+        Console.ReadLine();
+        Console.Clear();
+        Console.WriteLine("Vitaj v hre Witcher Arena!");
+        foreach (string option in menuOptions)
+        {
+            Console.WriteLine(option);
+        }
+        menuChoice = Console.ReadLine();
+        break;
+    default:
+        Console.WriteLine("Neplatná voľba, skúste znova.");                                                      //neplatná voľba
+        break;
+}
 
 
 
