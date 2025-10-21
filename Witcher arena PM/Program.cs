@@ -22,24 +22,26 @@ System.Threading.Thread.Sleep(2500);                                            
 Console.Clear();
 
 
-Console.WriteLine("Vitaj v hre Witcher Arena!");
-List<string> menuOptions = new List<string> { "Hrat (H)", "Opis (O)" };          //hlavne menu
+Console.WriteLine("Vitaj v hre Witcher Arena!");    
+List<string> menuOptions = new List<string> { "Hrat (H)", "Opis (O)" };                           //hlavne menu
 foreach (string option in menuOptions)
 {
     Console.WriteLine(option);
 }
-string menuChoice = Console.ReadLine();
+string menuChoice = Console.ReadLine();                                                          //výber z menu
 switch (menuChoice.ToUpper())
 {
     case "H":
-        Console.WriteLine("Začínaš hru...");
+        Console.WriteLine("Začínaš hru...");                                                      //začatie hry
         System.Threading.Thread.Sleep(1000);
         Console.Clear();
         break;
     case "O":
         Console.BackgroundColor = ConsoleColor.DarkGray;
         Console.Clear();
-        Console.WriteLine("Witcher Arena je textová RPG hra, v ktorej si vyberieš postavu a bojuješ proti príšerám v rôznych arénach. Cieľom je prežiť a poraziť všetky príšery.");
+        Console.WriteLine("Witcher Arena je textová RPG hra, v ktorej si vyberieš postavu a bojuješ proti príšerám v rôznych arénach. Cieľom je prežiť a poraziť všetky príšery.");         //opis hry
+        Console.WriteLine("Hra obsahuje rôzne postavy, každá s unikátnymi schopnosťami, a rôzne arény s rôznymi príšerami.");
+        Console.WriteLine("Túto hru vytvorili Michal Vancel a Patrik Smržo");
         Console.WriteLine("Stlač ENTER pre návrat do hlavného menu...");
         Console.ReadLine();
         Console.Clear();
@@ -51,7 +53,7 @@ switch (menuChoice.ToUpper())
         menuChoice = Console.ReadLine();
         break;
     default:
-        Console.WriteLine("Neplatná voľba, skúste znova.");
+        Console.WriteLine("Neplatná voľba, skúste znova.");                                                      //neplatná voľba
         break;
 }
 
@@ -194,7 +196,7 @@ string action2 = Console.ReadLine();                                            
 if (action2 == "H" || action2 == "h")
 {
     int HpM3 = HpM2 - druhyHITM;
-    Console.WriteLine($"Život príšery: {HpM3}");         //odčítanie HP príšery po druhom zápase
+    Console.WriteLine($"Život príšery: {HpM3}");                                             //odčítanie HP príšery po druhom zápase
 
 
     Console.WriteLine("Príšera znova útočí!");
@@ -209,7 +211,7 @@ if (action2 == "H" || action2 == "h")
     else if (HpM6 == 0) ;
     {
         int HpM5 = HpM4 - criticalHITM;
-        Console.WriteLine($"Život príšery: {HpM5}");         //odčítanie HP po kritickom hite príšery
+        Console.WriteLine($"Život príšery: {HpM5}");                                             //odčítanie HP po kritickom hite príšery
     }
 }
 
@@ -226,14 +228,14 @@ Console.WriteLine(@"
         /          \
        /            \
       /              \
-      \______________/
-");
+      \______________/                                          
+");                                                                                 //grafika lektvaru
 Console.WriteLine("Pre získanie lektvaru stlač L");
 string lektvar = Console.ReadLine();
 if (lektvar == "L" || lektvar == "l")
 {
 
-    Console.WriteLine("Zobral si lektvar do inventára");
+    Console.WriteLine("Zobral si lektvar do inventára");                            //zobrazenie lektvaru v inventári
 }
 Console.WriteLine("Pre otvorenie inventára stlač E");
 string inventar = Console.ReadLine();
@@ -248,7 +250,7 @@ if (inventar == "E" || inventar == "e")
         Console.WriteLine("- " + item);
     }
 }
-Console.WriteLine("Chceš použiť lektvar na uzdravenie? Áno (A) / Nie (N)");
+Console.WriteLine("Chceš použiť lektvar na uzdravenie? Áno (A) / Nie (N)");                  //použitie lektvaru
 string pouzitLektvar = Console.ReadLine();
 if (pouzitLektvar == "A" || pouzitLektvar == "a")
 {
@@ -261,7 +263,7 @@ else if (pouzitLektvar == "N" || pouzitLektvar == "n")
     Console.WriteLine("Môžeš pokračovať v boji");
 }
 
-Console.WriteLine("Gratulujeme, úspešne si prešiel prvou arénou!");  //koniec prvej arény
+Console.WriteLine("Gratulujeme, úspešne si prešiel prvou arénou!");                                  //koniec prvej arény   
 
 
 
@@ -294,7 +296,7 @@ Console.WriteLine("   <0>   ");
 System.Threading.Thread.Sleep(1500);
 Console.WriteLine("Kiklop sa zoubudil");
 
-if (pouzitLektvar == "A" || pouzitLektvar == "a")
+if (pouzitLektvar == "A" || pouzitLektvar == "a")                                                       //zobrazenie HP po použití lektvaru
 {
     Console.WriteLine($"Život hráča {playerName}: {HpP5}");
 }
@@ -306,7 +308,7 @@ int hpM1 = HpMonster1();
 int HpMonster1()
 {
     const int hpMonster = 60;
-    Console.WriteLine($"Život Kiklopa: {HpM7}");
+    Console.WriteLine($"Život Kiklopa: {HpM7}");                                                //zobrazenie HP Kiklopa
     return hpMonster;
 }
 
@@ -362,11 +364,11 @@ else if (pouzitLektvar == "N" || pouzitLektvar == "n")
     Console.WriteLine($"Život hráča {playerName}: {HpP21}");
 
 }
-string action6 = Console.ReadLine();
+string action6 = Console.ReadLine();                                                        //3HIT hraca na Kiklopa
 if (action6 == "H" || action6 == "h")
 {
-    int HpM15 = HpM12 - hit3nakiklopa;
-    System.Threading.Thread.Sleep(1500);
+    int HpM15 = HpM12 - hit3nakiklopa;                                                        //odčítanie HP Kiklopa
+    System.Threading.Thread.Sleep(1500);    
     Console.WriteLine($"Zivot Kiklopa: {HpM14}");
     System.Threading.Thread.Sleep(1500);
     Console.WriteLine("Kiklop útočí");
@@ -377,7 +379,7 @@ if (action6 == "H" || action6 == "h")
 Console.WriteLine("Kiklop porazený!");
 System.Threading.Thread.Sleep(1500);
 Console.Clear();
-Console.WriteLine("Z Kiklopa vypadol zlatý meč");                             //vypadnutie meča)
+Console.WriteLine("Z Kiklopa vypadol zlatý meč");                                         //vypadnutie meča)
 Console.WriteLine(@"
               /\
              /  \
@@ -398,8 +400,8 @@ Console.WriteLine(@"
             |    |
              \  /
               \/
-");
-Console.WriteLine("Pre získanie meča stlač M");
+");                                                                                     //grafika meča
+Console.WriteLine("Pre získanie meča stlač M");                                         //zobrazenie meča v inventári
 string mec = Console.ReadLine();
 if (mec == "M" || mec == "m")
 {
@@ -416,14 +418,14 @@ if (inventar2 == "E" || inventar2 == "e")
         Console.WriteLine("- " + item);
     }
 }
-Console.WriteLine("Gratulujeme, úspešne si prešiel druhou arénou!");  //koniec druhej arény
+Console.WriteLine("Gratulujeme, úspešne si prešiel druhou arénou!");                         //koniec druhej arény
 System.Threading.Thread.Sleep(2000);
 Console.Clear();
-Console.WriteLine("Pripravujeme ďalšie arény...");                                       //pripravovanie ďalších arén
+Console.WriteLine("Pripravujeme ďalšie arény...");                                          //pripravovanie ďalších arén
 System.Threading.Thread.Sleep(2000);
 Console.Clear();
 
-Console.WriteLine("Vitaj v tretej aréne!");                                                                 //vstup do tretej areny
+Console.WriteLine("Vitaj v tretej aréne!");                                                   //vstup do tretej areny
 System.Threading.Thread.Sleep(1500);
 Console.WriteLine("Práve sa zobúdza príšera Drak");
 Console.WriteLine("    / \\  ");
@@ -434,7 +436,7 @@ Console.ReadLine();
 Console.WriteLine("Boj začína");
 System.Threading.Thread.Sleep(500);
 Console.Clear();
-Console.BackgroundColor = ConsoleColor.Red;                                               //zmena farby pozadia
+Console.BackgroundColor = ConsoleColor.Red;                                                 //zmena farby pozadia
 Console.Clear();
 
 int HpD = 10;
@@ -447,7 +449,7 @@ if (action8 == "H" || action8 == "h")
 {
     int HpD2 = HpD - HitD;
     Console.WriteLine($"Život Draka: {HpD2}");                                               //odčítanie HP Draka
-    Console.WriteLine("Drak útočí naspäť!");                                             //útok Draka
+    Console.WriteLine("Drak útočí naspäť!");                                                     //útok Draka
     System.Threading.Thread.Sleep(1500);
     int HpP11 = hpP3 - jedenHITP;
     Console.WriteLine($"Život hráča {playerName}: {hpP3}");
@@ -458,12 +460,12 @@ if (action8 == "H" || action8 == "h")
 {
     int HpD2 = 5;
     int HpD3 = HpD2 - HitD;
-    Console.WriteLine($"Život Draka: {HpD3}");                                               //odčítanie HP Draka
+    Console.WriteLine($"Život Draka: {HpD3}");                                                   //odčítanie HP Draka
 }
 Console.WriteLine("Drak porazený!");
 System.Threading.Thread.Sleep(1500);
 Console.Clear();
-Console.WriteLine("Gratulujeme, úspešne si prešiel treťou arénou a uspesne si dokoncil hru!");    //koniec tretej arény a hry
+Console.WriteLine("Gratulujeme, úspešne si prešiel treťou arénou a uspesne si dokoncil hru!");       //koniec tretej arény a hry
 System.Threading.Thread.Sleep(1500);
 Console.WriteLine("Načítavam záverečnú obrazovku...");
 
@@ -471,12 +473,12 @@ Console.WriteLine("Načítavam záverečnú obrazovku...");
 System.Threading.Thread.Sleep(2000);
 Console.BackgroundColor = ConsoleColor.Black;
 Console.Clear();
-Console.WriteLine("Ďakujeme že ste si zahrali Witcher Arena PM!");                       //koniec hry
+Console.WriteLine("Ďakujeme že ste si zahrali Witcher Arena PM!");                                    //koniec hry
 Console.WriteLine("Vytvoril: Patrik a Michal");
-Console.WriteLine("Verzia: " + version);                                                //verzia
-Console.WriteLine("Dátum vydania: 2025");                                               //dátum vydania
+Console.WriteLine("Verzia: " + version);                                                             //verzia
+Console.WriteLine("Dátum vydania: 21. 10.  2025");                                                    //dátum vydania
 Console.WriteLine("Stlač ENTER pre ukončenie...");
 Console.ReadLine();
 Console.Clear();
-Environment.ExitCode = 0;                                                                  //ukončenie programu
+Environment.ExitCode = 0;                                                                             //ukončenie programu
 Environment.Exit(Environment.ExitCode);
