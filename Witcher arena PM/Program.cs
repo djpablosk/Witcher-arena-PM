@@ -22,6 +22,32 @@ System.Threading.Thread.Sleep(2500);                                            
 Console.Clear();
 
 
+Console.WriteLine("Vitaj v hre Witcher Arena!");                                                      //uvodna veta
+
+
+Console.WriteLine("Hrat");
+int opis = Console.Read();
+int play = Console.Read();
+if (play == 'H' || play == 'h')
+{
+    Console.WriteLine("Hra sa spúšťa...");
+}
+if (opis == 'O' || opis == 'o') 
+{
+    Console.WriteLine("toto je hra v ktorej bojuješ proti príšerám a snažíš sa prežiť v aréne. Vyber si svoju postavu a začni bojovať!");
+   
+}
+if 
+
+
+
+
+
+
+    Console.WriteLine("Opis");
+
+
+
 
 
 Console.WriteLine(" Pre pokračovanie zadaj svoj nickname: ");                                                      // zadanie mena
