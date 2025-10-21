@@ -24,6 +24,8 @@ Console.Clear();
 
 
 
+
+
 Console.WriteLine(" Pre pokračovanie zadaj svoj nickname: ");                                                      // zadanie mena
 string playerName = Console.ReadLine();
 Console.WriteLine("Ahoj " + playerName + ", prave si vstupil do hry Witcher Arena, dúfam že si pripravený na boj!");       //meno
