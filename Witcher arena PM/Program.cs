@@ -347,17 +347,104 @@ else if (pouzitLektvar == "N" || pouzitLektvar == "n")
     System.Threading.Thread.Sleep(1500);
     Console.WriteLine("Zabil si Kiklopa");
 }
+System.Threading.Thread.Sleep(1500);
+Console.Clear();
+Console.WriteLine("Z Kiklopa vypadol zlatý meč");                             //vypadnutie meča)
+Console.WriteLine(@"
+              /\
+             /  \
+            |    |
+            |    |
+            |    |
+            |    |
+            |    |
+            |    |
+            |    |
+            |    |
+            |    |
+            |    |
+       _____|    |_____
+       \____|    |____/
+            |    |
+            |    |
+            |    |
+             \  /
+              \/
+");
+Console.WriteLine("Pre získanie meča stlač M");
+string mec = Console.ReadLine();
+if (mec == "M" || mec == "m")
+{
+    Console.WriteLine("Zobral si meč do inventára");
+    inventory.Add("Zlatý meč");
+}
+Console.WriteLine("Pre otvorenie inventára stlač E");
+string inventar2 = Console.ReadLine();
+if (inventar2 == "E" || inventar2 == "e")
+{
+    Console.WriteLine("Inventár:");
+    foreach (string item in inventory)
+    {
+        Console.WriteLine("- " + item);
+    }
+}
+Console.WriteLine("Gratulujeme, úspešne si prešiel druhou arénou!");  //koniec druhej arény
+System.Threading.Thread.Sleep(2000);
+Console.Clear();
+Console.WriteLine("Pripravujeme ďalšie arény...");                                       //pripravovanie ďalších arén
+System.Threading.Thread.Sleep(2000);
+Console.Clear();
 
+Console.WriteLine("Vitaj v tretej aréne!");                                                                 //vstup do tretej areny
+System.Threading.Thread.Sleep(1500);
+Console.WriteLine("Práve sa zobúdza príšera Drak");
+Console.WriteLine("    / \  ");
+System.Threading.Thread.Sleep(1500);
+Console.WriteLine("Drak sa zoubudil");
+Console.WriteLine("Stlač ENTER pre začatie boja");
+Console.ReadLine();
+Console.WriteLine("Boj začína");
+System.Threading.Thread.Sleep(500);
+Console.Clear();
+Console.BackgroundColor = ConsoleColor.Red;                                               //zmena farby pozadia
+Console.Clear();
 
-
-
+int HpD = 10;
+int HitD = 5;
+int hpd2 = 5;
+Console.WriteLine("Pre útok stlač H");
+Console.ReadLine();
+string action8 = Console.ReadLine();
+if (action8 == "H" || action8 == "h")
+{
+    int HpD2 = HpD - HitD;
+    Console.WriteLine($"Život Draka: {HpD2}");                                               //odčítanie HP Draka
+    Console.WriteLine("Drak útočí naspäť!");                                             //útok Draka
+    System.Threading.Thread.Sleep(1500);
+    int HpP11 = hpP3 - jedenHITP;
+    Console.WriteLine($"Život hráča {playerName}: {hpP3}");
+}
+Console.WriteLine("Pre ďalší útok stlač H");
+Console.ReadLine();
+if (action8 == "H" || action8 == "h")
+{
+    int HpD2 = 5;
+    int HpD3 = HpD2 - HitD;
+    Console.WriteLine($"Život Draka: {HpD3}");                                               //odčítanie HP Draka
+}
+Console.WriteLine("Drak porazený!");
+System.Threading.Thread.Sleep(1500);
+Console.Clear();
+Console.WriteLine("Gratulujeme, úspešne si prešiel treťou arénou a uspesne si dokoncil hru!");    //koniec tretej arény a hry
+System.Threading.Thread.Sleep(1500);
+Console.WriteLine("Načítavam záverečnú obrazovku...");
 
 
 System.Threading.Thread.Sleep(2000);
 Console.BackgroundColor = ConsoleColor.Black;
 Console.Clear();
 Console.WriteLine("Ďakujeme že ste si zahrali Witcher Arena PM!");                       //koniec hry
-Console.WriteLine("Vytvoril: Patrik a Michal");                                           
+Console.WriteLine("Vytvoril: Patrik a Michal");
 Console.WriteLine("Verzia: " + version);                                                //verzia
 Console.WriteLine("Dátum vydania: 2025");                                               //dátum vydania
 Console.WriteLine("Stlač ENTER pre ukončenie...");
@@ -365,6 +452,11 @@ Console.ReadLine();
 Console.Clear();
 Environment.ExitCode = 0;                                                                  //ukončenie programu
 Environment.Exit(Environment.ExitCode);
+
+
+
+
+
 
 
 
