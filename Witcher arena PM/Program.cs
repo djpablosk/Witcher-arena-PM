@@ -222,7 +222,7 @@ int HpM12 = 20;
 int HpM14 = 5;
 int HpP5 = 94;
 int HpP6 = 69;
-
+int HpP23 = 4;
 int HpP19 = 43;
 int HpP21 = 19;
 int HpP7 = 44;
@@ -232,6 +232,7 @@ int hit3naP = 35;
 int hit1nakiklopa = 15;
 int hit2nakiklopa = 25;
 int hit3nakiklopa = 15;
+int hit4nakiklopa = 5;
 Console.WriteLine("Pre vstup do druhej arény stlač ENTER...");
 Console.ReadLine();
 Console.BackgroundColor = ConsoleColor.DarkYellow;                                                             //nastavenie farby pozadia
@@ -311,19 +312,48 @@ else if (pouzitLektvar == "N" || pouzitLektvar == "n")
     Console.WriteLine($"Život hráča {playerName}: {HpP21}");
 
 }
-    string action6 = Console.ReadLine();  
-    if (action6 == "H" || action6 == "h")
+    string action6 = Console.ReadLine();
+if (pouzitLektvar == "A" || pouzitLektvar == "a")
 {
-    int HpM15 = HpM12 -hit3nakiklopa;
-    System.Threading.Thread.Sleep(1500) ;
+    int HpM15 = HpM12 - hit3nakiklopa;
+    System.Threading.Thread.Sleep(1500);
     Console.WriteLine($"Zivot Kiklopa: {HpM14}");
     System.Threading.Thread.Sleep(1500);
     Console.WriteLine("Kiklop útočí");
     int HpP10 = HpP6 - hit3naP;
     Console.WriteLine($"Život hráča {playerName}: {HpP10}");
 
-}   
-    System.Threading.Thread.Sleep(2000);
+}
+else if (pouzitLektvar == "N" || pouzitLektvar == "n")
+{
+    int HpM15 = HpM12 - hit3nakiklopa;
+    System.Threading.Thread.Sleep(1500);
+    Console.WriteLine($"Zivot Kiklopa: {HpM14}");
+    System.Threading.Thread.Sleep(1500);
+    Console.WriteLine("Kiklop útočí");
+    int HpP24 = HpP21 - hit3naP;
+    Console.WriteLine($"Život hráča {playerName}: {HpP23}");
+}
+ string action7 = Console.ReadLine();
+if (pouzitLektvar == "A" || pouzitLektvar == "a")
+{
+    int HpM16 = HpM14 - hit4nakiklopa;
+    System.Threading.Thread.Sleep(1500);
+    Console.WriteLine("Zabil si Kiklopa");
+}
+else if (pouzitLektvar == "N" || pouzitLektvar == "n")
+{
+    int HpM16 = HpM14 - hit4nakiklopa;
+    System.Threading.Thread.Sleep(1500);
+    Console.WriteLine("Zabil si Kiklopa");
+}
+
+
+
+
+
+
+System.Threading.Thread.Sleep(2000);
 Console.BackgroundColor = ConsoleColor.Black;
 Console.Clear();
 Console.WriteLine("Ďakujeme že ste si zahrali Witcher Arena PM!");                       //koniec hry
