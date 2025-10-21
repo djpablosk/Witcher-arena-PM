@@ -22,39 +22,49 @@ System.Threading.Thread.Sleep(2500);                                            
 Console.Clear();
 
 
-Console.WriteLine("Vitaj v hre Witcher Arena!");                                                      //uvodna veta
-
-
-Console.WriteLine("Hrat");
-int opis = Console.Read();
-int play = Console.Read();
-if (play == 'H' || play == 'h')
+Console.WriteLine("Vitaj v hre Witcher Arena!");    
+List<string> menuOptions = new List<string> { "Hrat (H)", "Opis (O)" };          //hlavne menu
+foreach (string option in menuOptions)
 {
-    Console.WriteLine("Hra sa spúšťa...");
+    Console.WriteLine(option);
 }
-if (opis == 'O' || opis == 'o') 
+string menuChoice = Console.ReadLine();
+switch (menuChoice.ToUpper())
 {
-    Console.WriteLine("toto je hra v ktorej bojuješ proti príšerám a snažíš sa prežiť v aréne. Vyber si svoju postavu a začni bojovať!");
-   
+    case "H":
+        Console.WriteLine("Začínaš hru...");
+        System.Threading.Thread.Sleep(1000);
+        Console.Clear();
+        break;
+    case "O":
+        Console.BackgroundColor = ConsoleColor.DarkGray;
+        Console.Clear();
+        Console.WriteLine("Witcher Arena je textová RPG hra, v ktorej si vyberieš postavu a bojuješ proti príšerám v rôznych arénach. Cieľom je prežiť a poraziť všetky príšery.");
+        Console.WriteLine("Stlač ENTER pre návrat do hlavného menu...");
+        Console.ReadLine();
+        Console.Clear();
+        Console.WriteLine("Vitaj v hre Witcher Arena!");    
+        foreach (string option in menuOptions)
+        {
+            Console.WriteLine(option);
+        }
+        menuChoice = Console.ReadLine();
+        break;
+    default:
+        Console.WriteLine("Neplatná voľba, skúste znova.");
+        break;
 }
 
 
 
 
-
-
-
-    Console.WriteLine("Opis");
-
-
-
-
-
-Console.WriteLine(" Pre pokračovanie zadaj svoj nickname: ");                                                      // zadanie mena
+Console.WriteLine("Pre pokračovanie zadaj svoj nickname: ");                                                      // zadanie mena
 string playerName = Console.ReadLine();
 Console.WriteLine("Ahoj " + playerName + ", prave si vstupil do hry Witcher Arena, dúfam že si pripravený na boj!");       //meno
+Console.ReadLine();
+Console.Clear();
 Console.WriteLine("Načítavam postavy...");
-System.Threading.Thread.Sleep(2000);                                                              //pauza 2s pre animaciu nacitania
+System.Threading.Thread.Sleep(500);                                                              //pauza 2s pre animaciu nacitania
 Console.Clear();
 
 Console.WriteLine("Vyber si svoju postavu: ");                                              // výber postavy
@@ -202,7 +212,22 @@ if (action2 == "H" || action2 == "h")
         Console.WriteLine($"Život príšery: {HpM5}");         //odčítanie HP po kritickom hite príšery
     }
 }
+
+Console.WriteLine("Príšera porazená!");                                                     //porazenie príšery
+System.Threading.Thread.Sleep(1500);
+Console.Clear();
 Console.WriteLine("Z príšery vypadol uzdravovací lektvar");                             //vypadnutie lektvaru)
+Console.WriteLine(@"
+            ____
+           /    \
+          /      \
+         |        |
+         |        |
+        /          \
+       /            \
+      /              \
+      \______________/
+");
 Console.WriteLine("Pre získanie lektvaru stlač L");
 string lektvar = Console.ReadLine();
 if (lektvar == "L" || lektvar == "l")
@@ -348,8 +373,102 @@ else if (pouzitLektvar == "N" || pouzitLektvar == "n")
     int HpP10 = HpP6 - hit3naP;
     Console.WriteLine($"Život hráča {playerName}: {HpP10}");
 
-}   
-    System.Threading.Thread.Sleep(2000);
+} 
+    Console.WriteLine("Kiklop porazený!");
+System.Threading.Thread.Sleep(1500);
+Console.Clear();
+Console.WriteLine("Z Kiklopa vypadol zlatý meč");                             //vypadnutie meča)
+Console.WriteLine(@"
+              /\
+             /  \
+            |    |
+            |    |
+            |    |
+            |    |
+            |    |
+            |    |
+            |    |
+            |    |
+            |    |
+            |    |
+       _____|    |_____
+       \____|    |____/
+            |    |
+            |    |
+            |    |
+             \  /
+              \/
+");
+Console.WriteLine("Pre získanie meča stlač M");
+string mec = Console.ReadLine();
+if (mec == "M" || mec == "m")
+{
+    Console.WriteLine("Zobral si meč do inventára");
+    inventory.Add("Zlatý meč");
+}
+Console.WriteLine("Pre otvorenie inventára stlač E");
+string inventar2 = Console.ReadLine();
+if (inventar2 == "E" || inventar2 == "e")
+{
+    Console.WriteLine("Inventár:");
+    foreach (string item in inventory)
+    {
+        Console.WriteLine("- " + item);
+    }
+}
+Console.WriteLine("Gratulujeme, úspešne si prešiel druhou arénou!");  //koniec druhej arény
+System.Threading.Thread.Sleep(2000);
+Console.Clear();
+Console.WriteLine("Pripravujeme ďalšie arény...");                                       //pripravovanie ďalších arén
+System.Threading.Thread.Sleep(2000);
+Console.Clear();
+
+Console.WriteLine("Vitaj v tretej aréne!");                                                                 //vstup do tretej areny
+ System.Threading.Thread.Sleep(1500); 
+Console.WriteLine("Práve sa zobúdza príšera Drak");
+Console.WriteLine("    / \  ");
+System.Threading.Thread.Sleep(1500);
+Console.WriteLine("Drak sa zoubudil");
+Console.WriteLine("Stlač ENTER pre začatie boja");
+Console.ReadLine();
+Console.WriteLine("Boj začína");
+System.Threading.Thread.Sleep(500);
+Console.Clear();
+Console.BackgroundColor = ConsoleColor.Red;                                               //zmena farby pozadia
+Console.Clear();
+
+int HpD = 10;
+int HitD = 5;
+int hpd2 = 5;
+Console.WriteLine("Pre útok stlač H");
+Console.ReadLine();
+string action8 = Console.ReadLine();                                                     
+if (action8 == "H" || action8 == "h")
+{
+    int HpD2 = HpD - HitD;
+    Console.WriteLine($"Život Draka: {HpD2}");                                               //odčítanie HP Draka
+    Console.WriteLine("Drak útočí naspäť!");                                             //útok Draka
+    System.Threading.Thread.Sleep(1500);
+    int HpP11 = hpP3 - jedenHITP;
+    Console.WriteLine($"Život hráča {playerName}: {hpP3}");
+}
+Console.WriteLine("Pre ďalší útok stlač H");
+Console.ReadLine();
+if (action8 == "H" || action8 == "h")
+{
+    int HpD2 = 5;
+    int HpD3 = HpD2 - HitD;
+    Console.WriteLine($"Život Draka: {HpD3}");                                               //odčítanie HP Draka
+}
+Console.WriteLine("Drak porazený!");
+System.Threading.Thread.Sleep(1500);
+Console.Clear();
+Console.WriteLine("Gratulujeme, úspešne si prešiel treťou arénou a uspesne si dokoncil hru!");    //koniec tretej arény a hry
+System.Threading.Thread.Sleep(1500);
+Console.WriteLine("Načítavam záverečnú obrazovku...");
+
+
+System.Threading.Thread.Sleep(2000);
 Console.BackgroundColor = ConsoleColor.Black;
 Console.Clear();
 Console.WriteLine("Ďakujeme že ste si zahrali Witcher Arena PM!");                       //koniec hry
